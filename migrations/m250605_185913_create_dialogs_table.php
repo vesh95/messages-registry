@@ -20,7 +20,7 @@ class m250605_185913_create_dialogs_table extends Migration
         ]);
 
         $this->addForeignKey('clients_kf', self::TABLE, 'client_id', '{{%clients}}', 'client_id', 'CASCADE', 'CASCADE');
-        $this->createIndex('clients_kf', self::TABLE, 'client_id', true);
+        $this->createIndex('clients_uniq', self::TABLE, 'client_id', true);
     }
 
     /**
