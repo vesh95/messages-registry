@@ -1,0 +1,21 @@
+{
+  "require": {
+    "php": "8.4.*",
+    "yiisoft/yii2": "^2.0",
+    "yiisoft/yii2-redis": "^2.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  }
+}

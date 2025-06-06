@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+defined('YII_DEBUG') or define('YII_DEBUG', true);
+defined('YII_ENV') or define('YII_ENV', 'dev');
+
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/yiisoft/yii2/Yii.php';
+
+$config = [
+    'id' => 'message-app',
+    // the basePath of the application will be the `micro-app` directory
+    'basePath' => __DIR__,
+    // this is where the application will find all controllers
+    'aliases' => [
+        '@message' => __DIR__,
+    ],
+    'components' => [
+        'db' => [
+            'class'    => 'yii\db\Connection',
+            'dsn'      => 'pgsql:host=localhost;port=6543;dbname=messages_app',
+            'username' => 'postgres',
+            'password' => 'example',
+            'charset'  => 'utf8',
+        ],
+    ]
+];
+
+(new yii\console\Application($config))->run();
